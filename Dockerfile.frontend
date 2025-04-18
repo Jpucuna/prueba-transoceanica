@@ -1,0 +1,8 @@
+# Dockerfile for calendar-test (frontend)
+FROM node:19.9.0
+WORKDIR /app
+COPY ./fontend-calendar/package*.json ./
+RUN npm install
+COPY ./fontend-calendar .
+EXPOSE 8080
+CMD ["npm", "run", "dev"]

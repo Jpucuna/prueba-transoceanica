@@ -1,0 +1,48 @@
+version: '3.9'
+
+services:
+  db:
+    container_name: db
+    image: postgres:12-alpine
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=postgres
+    volumes:
+    - pgdata:/var/lib/postgresql/data
+    
+  nestapp:
+    container_name: nestapp
+    image: nestapp:latest
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    ports:
+      - "3030:3030"
+    environment:
+      - DB_TYPE=postgres
+      - PG_HOST=db
+      - PG_USER=postgres
+      - PG_PASSWORD=postgres
+      - PG_DB=postgres
+      - PG_PORT=5432
+    depends_on:
+      - db
+  
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./fontend-calendar:/app
+      - /app/node_modules
+    working_dir: /app
+    command: npm run dev
+    restart: unless-stopped
+
+volumes:
+  pgdata: {}
