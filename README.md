@@ -7,6 +7,26 @@ Este proyecto se configura y ejecuta fácilmente utilizando **Docker**. Asegúra
 - **Docker**: [Instalar Docker](https://docs.docker.com/get-docker/)
 - **Docker Compose**: [Instalar Docker Compose](https://docs.docker.com/compose/install/)
 
+## 🛠 Tecnologías Utilizadas
+
+Este proyecto fue desarrollado utilizando las siguientes tecnologías:
+
+- **Next.js** – Framework de React para el frontend.
+- **NestJS** – Framework para construir aplicaciones backend escalables con Node.js.
+- **PostgreSQL** – Base de datos relacional utilizada para almacenar los feriados.
+- **Docker** – Contenedores para facilitar la ejecución y despliegue del entorno completo.
+
+## 📅 Gestión de Feriados
+
+El aplicativo permite gestionar diferentes tipos de feriados en Ecuador:
+
+- **Feriados Nacionales**: Fechas oficiales a nivel nacional.
+- **Feriados Locales**: Celebraciones regionales o cantonales.
+- **Feriados Personales**: Fechas personalizadas por cada usuario.
+
+> ⚠️ Solo los **feriados personales** pueden ser **editados o eliminados**.  
+> Esto garantiza que los feriados **nacionales y locales** más comunes no puedan ser manipulados, manteniendo la integridad del calendario oficial.
+
 ## Configuración del entorno
 
 1. Clona este repositorio en tu máquina local:
