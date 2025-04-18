@@ -1,0 +1,6 @@
+[submodule "fontend-calendar"]
+	path = fontend-calendar
+	url = https://github.com/Jpucuna/fontend-calendar.git
+[submodule "calendar-backend"]
+	path = calendar-backend
+	url = https://github.com/Jpucuna/calendar-backend.git
